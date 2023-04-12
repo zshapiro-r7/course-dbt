@@ -1,0 +1,53 @@
+version: 2
+
+models:
+  - name: staging_users
+    description: User detailed information (name, email, etc.)
+    columns:
+        - name: user_id
+          tests:
+            - unique
+            - not_null
+
+  - name: staging_addresses
+    description: Address information (location, etc.)
+    columns:
+        - name: address_id
+          tests:
+            - unique
+            - not_null
+
+  - name: staging_orders 
+    description: Order information (order_id, etc.)
+    columns:
+        - name: order_id
+          tests:
+            - unique
+            - not_null 
+  
+  - name: staging_order_items
+    description: Order item information including quantity used to map orders to products. 
+
+  - name: staging_products
+    description: Product detailed information
+    columns:
+        - name: product_id
+          tests:
+            - unique
+            - not_null
+
+  - name: staging_promos
+    description: Promotion detailed information
+    columns:
+        - name: promo_id
+          tests:
+            - unique
+            - not_null
+
+  - name: staging_events
+    description: Event detailed information 
+    columns:
+        - name: event_id
+          tests:
+            - unique
+            - not_null
